@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import Link from "next/link";
 import "./globals.css";
 import { ThemeProvider } from "./components/ThemeProvider";
 
@@ -21,12 +22,12 @@ export default function RootLayout({
         <ThemeProvider>
           <div className="min-h-screen bg-white dark:bg-gray-900 text-gray-900 dark:text-white">
             <header className="bg-blue-600 dark:bg-blue-800 text-white p-4">
-              <nav className="container mx-auto flex justify-between items-center">
-                <h1 className="text-xl font-bold">Next.js Assignment</h1>
-                <div className="flex space-x-4">
-                  <a href="/" className="hover:underline">Home</a>
-                  <a href="/about" className="hover:underline">About</a>
-                  <a href="/blog" className="hover:underline">Blog</a>
+              <nav className="container mx-auto flex flex-col sm:flex-row justify-between items-center gap-4 sm:gap-0">
+                <h1 className="text-lg sm:text-xl font-bold">Next.js Assignment</h1>
+                <div className="flex space-x-3 sm:space-x-4">
+                  <Link href="/" className="hover:underline text-sm sm:text-base">Home</Link>
+                  <Link href="/about" className="hover:underline text-sm sm:text-base">About</Link>
+                  <Link href="/blog" className="hover:underline text-sm sm:text-base">Blog</Link>
                 </div>
               </nav>
             </header>

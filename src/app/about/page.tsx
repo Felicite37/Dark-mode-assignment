@@ -20,7 +20,7 @@ interface User {
 
 async function getAuthorInfo(): Promise<User> {
   const res = await fetch('https://jsonplaceholder.typicode.com/users/1', {
-    cache: 'no-store' // This ensures SSR
+    cache: 'no-store'
   });
   
   if (!res.ok) {
@@ -34,11 +34,11 @@ export default async function About() {
   const author = await getAuthorInfo();
 
   return (
-    <div className="max-w-2xl mx-auto">
-      <h1 className="text-3xl font-bold mb-6">About (SSR)</h1>
+    <div className="max-w-2xl mx-auto px-4">
+      <h1 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6">About (SSR)</h1>
       
-      <div className="bg-gray-100 dark:bg-gray-800 p-6 rounded-lg">
-        <h2 className="text-2xl font-semibold mb-4">Author Information</h2>
+      <div className="bg-gray-100 dark:bg-gray-800 p-4 sm:p-6 rounded-lg">
+        <h2 className="text-xl sm:text-2xl font-semibold mb-4">Author Information</h2>
         
         <div className="space-y-3">
           <p><strong>Name:</strong> {author.name}</p>
