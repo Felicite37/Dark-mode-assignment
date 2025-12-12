@@ -60,21 +60,6 @@ export default async function About() {
           </div>
         </div>
       </div>
-      
-      <div className="mt-6 p-4 bg-yellow-100 dark:bg-yellow-900 rounded-lg">
-        <p className="text-sm">
-          <strong>Rendering:</strong> This page uses Server-Side Rendering (SSR). 
-          The author data is fetched on each request using cache: 'no-store'.
-        </p>
-      </div>
-
-      <div className="mt-6 p-4 bg-blue-100 dark:bg-blue-900 rounded-lg">
-        <h3 className="text-lg font-semibold mb-2">🚀 Deployed Project</h3>
-        <p className="text-sm">
-          This project is deployed and demonstrates all Next.js rendering techniques 
-          including CSR, SSR, SSG, and ISR with dark mode toggle functionality.
-        </p>
-      </div>
     </div>
   );
 }

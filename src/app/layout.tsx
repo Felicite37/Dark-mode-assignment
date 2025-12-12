@@ -21,9 +21,8 @@ export default function RootLayout({
       <body className={inter.className}>
         <ThemeProvider>
           <div className="min-h-screen bg-white dark:bg-gray-900 text-gray-900 dark:text-white">
-            <header className="bg-blue-600 dark:bg-blue-800 text-white p-4">
-              <nav className="container mx-auto flex flex-col sm:flex-row justify-between items-center gap-4 sm:gap-0">
-                <h1 className="text-lg sm:text-xl font-bold">Next.js Assignment</h1>
+            <header className="bg-green-600 dark:bg-green-800 text-white p-4">
+              <nav className="container mx-auto flex justify-center">
                 <div className="flex space-x-3 sm:space-x-4">
                   <Link href="/" className="hover:underline text-sm sm:text-base">Home</Link>
                   <Link href="/about" className="hover:underline text-sm sm:text-base">About</Link>
@@ -31,7 +30,7 @@ export default function RootLayout({
                 </div>
               </nav>
             </header>
-            <main className="container mx-auto p-4">
+            <main className="container mx-auto p-4 min-h-screen">
               {children}
             </main>
             <footer className="bg-gray-800 text-white p-4 mt-8">

@@ -288,6 +288,22 @@ body {
   background-color: #1e3a8a;
 }
 
+.bg-green-100 {
+  background-color: #dcfce7;
+}
+
+.bg-green-600 {
+  background-color: #16a34a;
+}
+
+.bg-green-800 {
+  background-color: #166534;
+}
+
+.bg-green-900 {
+  background-color: #14532d;
+}
+
 .bg-yellow-100 {
   background-color: #fef3c7;
 }
@@ -314,6 +330,14 @@ body {
 
 .dark .dark\:bg-blue-900 {
   background-color: #1e3a8a;
+}
+
+.dark .dark\:bg-green-800 {
+  background-color: #166534;
+}
+
+.dark .dark\:bg-green-900 {
+  background-color: #14532d;
 }
 
 .dark .dark\:bg-yellow-900 {

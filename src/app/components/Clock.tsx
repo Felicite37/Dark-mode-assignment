@@ -3,9 +3,10 @@
 import { useState, useEffect } from 'react';
 
 export function Clock() {
-  const [time, setTime] = useState(new Date());
+  const [time, setTime] = useState<Date | null>(null);
 
   useEffect(() => {
+    setTime(new Date());
     const timer = setInterval(() => {
       setTime(new Date());
     }, 1000);
@@ -13,11 +14,23 @@ export function Clock() {
     return () => clearInterval(timer);
   }, []);
 
+  if (!time) {
+    return (
+      <div className="bg-green-100 dark:bg-green-900 p-12 rounded-lg text-center">
+        <h3 className="text-2xl font-semibold mb-8">Current Time (CSR)</h3>
+        <p className="text-6xl font-mono mb-8">Loading...</p>
+        <p className="text-xl text-gray-600 dark:text-gray-400">
+          Loading...
+        </p>
+      </div>
+    );
+  }
+
   return (
-    <div className="bg-blue-100 dark:bg-blue-900 p-4 rounded-lg">
-      <h3 className="text-lg font-semibold mb-2">Current Time (CSR)</h3>
-      <p className="text-2xl font-mono">{time.toLocaleTimeString()}</p>
-      <p className="text-sm text-gray-600 dark:text-gray-400">
+    <div className="bg-green-100 dark:bg-green-900 p-12 rounded-lg text-center">
+      <h3 className="text-2xl font-semibold mb-8">Current Time (CSR)</h3>
+      <p className="text-6xl font-mono mb-8">{time.toLocaleTimeString()}</p>
+      <p className="text-xl text-gray-600 dark:text-gray-400">
         {time.toLocaleDateString()}
       </p>
     </div>
